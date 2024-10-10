@@ -1,0 +1,160 @@
+<!-- templates/index.html -->
+
+{% extends "base.html" %}
+
+{% block title %}Produza - Página Inicial{% endblock %}
+
+{% block content %}
+<div class="background">
+    <div class="fundo-tudo">
+        <!-- Cabeçalho -->
+        <div class="cabecalho">
+            <a href="{{ url_for('index') }}">
+                <h2 class="logo"><img src="{{ url_for('static', filename='imagens/logo-produza.png') }}" alt="Logo-Produza"></h2>
+            </a>
+            <div class="navigation">
+                <div class="menus">
+                    <a href="#T">Trabalhos</a>
+                    <a href="#A">Avaliações</a>
+                    <a href="#H">História</a>
+                    <a href="#F">Contato</a>
+                </div>
+                <a href="{{ url_for('login') }}"><button class="btn-login">Login</button></a>
+            </div>
+        </div>
+        <!-- Fim Cabeçalho -->
+
+        <div class="fundo-embacado">
+            <div class="titulo">
+                <h1 id="T">Trabalhos</h1>
+            </div>
+            <!-- Carousel -->
+            <div class="container-fundo">
+                <div class="container">
+                    <div class="fundo-carousel">
+                        <div id="carouselExample" class="carousel slide">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="{{ url_for('static', filename='imagens/Kids1.jpg') }}" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="{{ url_for('static', filename='imagens/Kids2.jpg') }}" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="{{ url_for('static', filename='imagens/Kids3.jpg') }}" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fim Carousel -->
+            
+            <!-- Avaliações -->
+            <div class="titulo2">
+                <h1 id="A">Avaliações</h1>
+            </div>
+            <div class="fundo-aval">
+                <div class="ava1">
+                    <div class="star">
+                        <img src="{{ url_for('static', filename='imagens/5star.png') }}" alt="5 estrelas">
+                    </div>
+                    <br>
+                    <div class="texto-ava">
+                        Estou maravilhado com as fotos dos meus filhos. A equipe de fotógrafos fez um trabalho excepcional,
+                        capturando momentos preciosos de forma genuína e artística. Recomendo com entusiasmo!
+                    </div>
+                    <div class="icone-usuario">
+                        <img src="{{ url_for('static', filename='imagens/icone1.jpg') }}" alt="Usuário">
+                    </div>
+                    <div class="texto-nome">
+                        Cinthia Ramos
+                    </div>
+                </div>
+            </div>
+            <div class="fundo-aval">
+                <div class="ava1">
+                    <div class="star">
+                        <img src="{{ url_for('static', filename='imagens/5star.png') }}" alt="5 estrelas">
+                    </div>
+                    <br>
+                    <div class="texto-ava">
+                        As fotos dos meus filhos são simplesmente incríveis! A equipe de fotógrafos fez um trabalho excepcional,
+                        capturando momentos preciosos de forma genuína e artística. Recomendo totalmente!
+                    </div>
+                    <div class="icone-usuario">
+                        <img src="{{ url_for('static', filename='imagens/icone2.jpg') }}" alt="Usuário">
+                    </div>
+                    <div class="texto-nome">
+                        Pablo Silva
+                    </div>
+                </div>
+            </div>
+            <div class="fundo-aval">
+                <div class="ava1">
+                    <div class="star">
+                        <img src="{{ url_for('static', filename='imagens/5star.png') }}" alt="5 estrelas">
+                    </div>
+                    <br>
+                    <div class="texto-ava">
+                        Estou encantado com as fotos dos meus filhos. O trabalho da equipe de fotógrafos é incrível!
+                        Eles capturaram momentos preciosos de forma genuína e artística. Recomendo muito!
+                    </div>
+                    <div class="icone-usuario">
+                        <img src="{{ url_for('static', filename='imagens/icone2.jpg') }}" alt="Usuário">
+                    </div>
+                    <div class="texto-nome">
+                        Helena Moraes
+                    </div>
+                </div>
+            </div>
+            <!-- Fim avaliações -->
+            
+            <!-- Sobre -->
+            <div class="fundo-sobre">
+                <div class="titulo3">
+                    <h1 id="H">História</h1>
+                </div>
+                <br>
+                <div class="sobre">
+                    <p>
+                        Bem-vindo à Produza! Somos Leandro e Ligia, um casal apaixonado pela fotografia, e
+                        nossa jornada começou com a missão de capturar a alegria e a espontaneidade das crianças.
+                        Com mais de 10 anos de experiência, aprimoramos nossa habilidade em criar imagens autênticas
+                        que refletem a verdadeira essência da infância. Seja um aniversário, um dia no parque ou um
+                        retrato em família, nosso foco é destacar a felicidade das crianças em cada foto.
+                        Junte-se a nós nesta jornada fotográfica e deixe-nos fazer parte das memórias da sua
+                        família.
+                        Estamos prontos para capturar a alegria das crianças com amor e dedicação. Obrigado por estar
+                        conosco nesta aventura.
+                    </p>
+                </div>
+            </div>
+            <!-- Fim do Sobre -->
+        </div>
+        
+        <div class="fundo-contato">
+            <div class="titulo4">
+                <h1 id="F">Contato</h1>
+            </div>
+            <div class="contato">
+                <i class="fa-brands fa-whatsapp"></i>
+                (44) 9 9982-1845
+                <br>
+                <i class="fa-solid fa-envelope"></i>
+                Produzavideo@gmail.com
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

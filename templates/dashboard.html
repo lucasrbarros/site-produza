@@ -1,0 +1,38 @@
+<!-- templates/dashboard.html -->
+
+{% extends "base.html" %}
+
+{% block title %}Produza - Dashboard{% endblock %}
+
+{% block content %}
+<div class="background">
+    <div class="fundo-tudo">
+        <!-- Cabeçalho -->
+        <div class="cabecalho">
+            <a href="{{ url_for('index') }}">
+                <h2 class="logo"><img src="{{ url_for('static', filename='imagens/logo-produza.png') }}" alt="Logo-Produza"></h2>
+            </a>
+            <div class="navigation">
+                <div class="menus">
+                    <a href="{{ url_for('index') }}#T">Trabalhos</a>
+                    <a href="{{ url_for('index') }}#A">Avaliações</a>
+                    <a href="{{ url_for('index') }}#H">História</a>
+                    <a href="{{ url_for('index') }}#F">Contato</a>
+                </div>
+                <a href="{{ url_for('logout') }}"><button class="btn-login">Logout</button></a>
+            </div>
+        </div>
+        <!-- Fim Cabeçalho -->
+
+        <div class="fundo-embacado">
+            <div class="titulo">
+                <h1>Dashboard</h1>
+            </div>
+            <div class="user-link">
+                <h2 class="link_individual">Seu link individual:</h2>
+                <a href="{{ drive_link }}" target="_blank" class="btn-fotos">Ver Fotos</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,66 @@
+<!-- templates/login.html -->
+
+{% extends "base.html" %}
+
+{% block title %}Produza - Login{% endblock %}
+
+{% block content %}
+<div class="background">
+    <div class="fundo2">
+        <div class="cabecalho">
+            <a href="{{ url_for('index') }}">
+                <h2 class="logo"><img src="{{ url_for('static', filename='imagens/logo-produza.png') }}" alt="Logo-Produza"></h2>
+            </a>
+            <nav class="navigation">
+                <div class="menus">
+                    <a href="{{ url_for('index') }}#T">Trabalhos</a>
+                    <a href="{{ url_for('index') }}#A">Avaliações</a>
+                    <a href="{{ url_for('index') }}#H">História</a>
+                    <a href="{{ url_for('index') }}#F">Contato</a>
+                </div>
+            </nav>
+        </div>
+        <!-- login -->
+        <div class="wrapper">
+            <a href="{{ url_for('index') }}">
+                <span class="icon-close">
+                    <ion-icon name="close-outline"></ion-icon>
+                </span>
+            </a>
+            <div class="form-box login">
+                <h2>Login</h2>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="flash-message {{ category }}">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <form method="POST" action="{{ url_for('login') }}">
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                        <input type="text" name="username" class="lab_user" required>
+                        <label>Usuário</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </span>
+                        <input type="password" name="password" class="lab_user" required>
+                        <label>
+                            Senha
+                        </label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox" name="remember">Lembre de mim</label>
+                        <a href="#">Esqueceu a senha?</a>
+                    </div>
+                    <button type="submit" class="btn-entrar">
+                        Entrar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

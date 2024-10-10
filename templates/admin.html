@@ -1,0 +1,93 @@
+<!-- templates/admin.html -->
+
+{% extends "base.html" %} {% block title %}Produza - Administração{% endblock %}
+{% block content %}
+<div class="background">
+  <div class="fundo-tudo">
+    <!-- Cabeçalho -->
+    <div class="cabecalho">
+      <a href="{{ url_for('index') }}">
+        <h2 class="logo">
+          <img
+            src="{{ url_for('static', filename='imagens/logo-produza.png') }}"
+            alt="Logo-Produza"
+          />
+        </h2>
+      </a>
+      <div class="navigation">
+        <div class="menus">
+          <a href="{{ url_for('index') }}#T">Trabalhos</a>
+          <a href="{{ url_for('index') }}#A">Avaliações</a>
+          <a href="{{ url_for('index') }}#H">História</a>
+          <a href="{{ url_for('index') }}#F">Contato</a>
+        </div>
+        <a href="{{ url_for('logout') }}"
+          ><button class="btn-login">Logout</button></a
+        >
+      </div>
+    </div>
+    <!-- Fim Cabeçalho -->
+
+    <div class="fundo-embacado">
+      <div class="titulo">
+        <h1>Área Administrativa</h1>
+      </div>
+
+      <!-- Exibição de Mensagens de Flash -->
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %} {% for category, message in messages %}
+      <div class="flash-message {{ category }}">{{ message }}</div>
+      {% endfor %} {% endif %} {% endwith %}
+
+      <!-- Formulário para Adicionar Novos Usuários -->
+      <form method="POST" action="{{ url_for('admin') }}">
+        <div class="input-box">
+          <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+          <input type="text" name="username" required />
+          <label>Usuário</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"
+            ><ion-icon name="lock-closed-outline"></ion-icon
+          ></span>
+          <input type="password" name="password" required />
+          <label>Senha</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="link-outline"></ion-icon></span>
+          <input type="text" name="drive_link" required />
+          <label>Link para Fotos</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+          <select name="role" class="opc" required>
+            <option value="user" selected>Usuário</option>
+            <option value="admin">Administrador</option>
+          </select>
+          <!-- <label>Papel</label> -->
+        </div>
+        <button type="submit" class="btn-entrar">Adicionar Usuário</button>
+      </form>
+
+      <!-- Lista de Usuários Registrados -->
+      <h2 class="users">Usuários Registrados</h2>
+      <table class="tabela_users">
+        <thead>
+          <tr>
+            <th class="col_usuario">Usuário</th>
+            <th class="col_papel">Papel</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for user in users %}
+          <tr>
+            <td>{{ user.username }}</td>
+            <td>{{ user.role }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}
