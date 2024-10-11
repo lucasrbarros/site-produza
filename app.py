@@ -85,7 +85,7 @@ def admin():
 @login_required
 def logout():
     logout_user()
-    flash('Você saiu com sucesso.', 'success')
+    # flash('Você saiu com sucesso.', 'success')
     return redirect(url_for('login'))
 
 if __name__ == '__main__':
