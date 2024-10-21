@@ -32,7 +32,9 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     
     <!-- JavaScript Personalizado -->
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <!-- JavaScript Personalizado -->
+<script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+
     
     {% block scripts %}{% endblock %}
 </body>

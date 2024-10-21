@@ -59,13 +59,22 @@
     flex-wrap: wrap;
 }
 
+.menus {
+    display: grid;
+    font-size: 0.8em;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
 .menus a {
     font-size: 1.6em;
     position: relative;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 40px;
+    gap: 1rem;
 }
 
 .menus a::after {
@@ -85,6 +94,23 @@
 .menus a:hover::after {
     transform: scaleX(1);
     transform-origin: left;
+}
+
+.menu-scrolled {
+    border-radius: 50px;
+    padding: 0.4rem;
+    background-color: rgba(0, 0, 0, 0.677);
+    transition: 2s;
+    gap: 1.2rem;
+}
+
+.menu-scrolled a {
+    font-size: 1.4em;
+    transition: 2s;
+}
+.navigation-scrolled{
+    margin-bottom: 75px;
+    transition: 2s;
 }
 
 .btn-login {
@@ -534,11 +560,7 @@
         justify-content: center;
         margin-left: 0;
     }
-    .menus {
-        display: grid;
-        grid-template-columns: repeat(2,2fr);
-        font-size: 0.8em;
-    }
+    
     .fundo-tudo{
         padding: 19rem 0 0 0;
     }
